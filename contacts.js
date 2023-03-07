@@ -14,6 +14,7 @@ async function listContacts() {
         const listContacts = JSON.parse(readResult);
 
         console.table(listContacts)
+        return listContacts
     } catch (error) {
         console.log(error.message);
     }

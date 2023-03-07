@@ -1,5 +1,5 @@
 const { Command } = require("commander");
-const contacts = require("./contacts");
+const {listContacts,getContactById, addContact,removeContact} = require("./contacts");
 
 const program = new Command();
 
@@ -22,19 +22,19 @@ const argv = program.opts();
 function invokeAction({ action, id, name, email, phone }) {
     switch (action) {
         case "list":
-            contacts.listContacts();
+            listContacts();
             break;
 
         case "get":
-            contacts.getContactById(id);
+            getContactById(id);
             break;
 
         case "add":
-            contacts.addContact(name, email, phone);
+        addContact(name, email, phone);
             break;
 
         case "remove":
-            contacts.removeContact(id);
+            removeContact(id);
             break;
 
         default:
